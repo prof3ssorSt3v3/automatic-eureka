@@ -2,15 +2,14 @@ import walks from '../models/walks.js';
 import { BadRequestError, NotFoundError } from '../utils/errors.js';
 
 const create = (body) => {
-  const { startTime, endTime, city } = body;
+  const { walkDate, city } = body;
   const id = Date.now();
 
-  if (!startTime || !endTime || !city) throw new BadRequestError('Invalid input');
+  if (!walkDate || !city) throw new BadRequestError('Invalid input');
 
   const newWalk = {
     id,
-    startTime: new Date(startTime),
-    endTime: new Date(endTime),
+    walkDate: new Date(walkDate),
     city,
   };
   walks.push(newWalk);
@@ -29,16 +28,15 @@ const getOne = (id) => {
 };
 
 const replace = (id, body) => {
-  const { startTime, endTime, city } = body;
+  const { walkDate, city } = body;
   const walkIndex = walks.findIndex((walk) => id === walk.id);
 
   if (walkIndex < 0) throw new NotFoundError(`Walk with id ${id} not found`);
-  if (!startTime || !endTime || !city) throw new BadRequestError('Invalid input');
+  if (!walkDate || !city) throw new BadRequestError('Invalid input');
 
   const updatedWalk = {
     id,
-    startTime: new Date(startTime),
-    endTime: new Date(endTime),
+    walkDate: new Date(walkDate),
     city,
   };
 
@@ -48,13 +46,12 @@ const replace = (id, body) => {
 };
 
 const update = (id, body) => {
-  const { startTime, endTime, city } = body;
+  const { walkDate, city } = body;
   const walk = walks.find((walk) => id === walk.id);
 
   if (!walk) throw new NotFoundError(`Walk with id ${id} not found`);
 
-  if (startTime) walk.startTime = startTime;
-  if (endTime) walk.endTime = endTime;
+  if (walkDate) walk.walkDate = walkDate;
   if (city) walk.city = city;
 
   return walk;
