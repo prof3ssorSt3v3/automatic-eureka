@@ -1,13 +1,13 @@
 import { Router } from 'express';
-import { create, getAll, getOne, replace, update, deleteOne } from '../controllers/walk.js';
+import walkController from '../controllers/walk.js';
 
 const walkRouter = Router();
 
-walkRouter.post('/', create);
-walkRouter.get('/', getAll);
-walkRouter.get('/:id', getOne);
-walkRouter.put('/:id', replace);
-walkRouter.patch('/:id', update);
-walkRouter.delete('/:id', deleteOne);
+walkRouter.post('/', walkController.create);
+walkRouter.get('/', walkController.getAll);
+walkRouter.get('/:id', walkController.getOne);
+walkRouter.put('/:id', walkController.replace);
+walkRouter.patch('/:id', walkController.update);
+walkRouter.delete('/:id', walkController.deleteOne);
 
 export default walkRouter;

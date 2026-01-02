@@ -1,4 +1,4 @@
-// import walkService from '../services/walk.js';
+import walkService from '../services/walk.js';
 
 const create = (req, res, next) => {
   try {
@@ -67,5 +67,6 @@ const deleteOne = (req, res) => {
     next(err);
   }
 };
+const walkController = { create, getAll, getOne, replace, update, deleteOne };
 
-export { create, getAll, getOne, replace, update, deleteOne };
+export default walkController;

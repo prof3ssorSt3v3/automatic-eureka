@@ -71,4 +71,6 @@ const deleteOne = (id) => {
   return deletedWalk;
 };
 
-export { create, getAll, getOne, replace, update, deleteOne };
+const walkService = { create, getAll, getOne, replace, update, deleteOne };
+
+export default walkService;
