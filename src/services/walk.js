@@ -1,5 +1,5 @@
-import walks from '../models/walks';
-import { BadRequestError, NotFoundError } from '../utils/errors';
+import walks from '../models/walks.js';
+import { BadRequestError, NotFoundError } from '../utils/errors.js';
 
 const create = (body) => {
   const { startTime, endTime, city } = body;

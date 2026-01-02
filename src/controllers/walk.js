@@ -1,4 +1,4 @@
-import walkService from '../services/walk';
+// import walkService from '../services/walk.js';
 
 const create = (req, res, next) => {
   try {
