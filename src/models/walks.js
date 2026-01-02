@@ -1,14 +1,12 @@
 const walks = [
   {
     id: 1,
-    startTime: new Date('2026-01-02T14:00'),
-    endTime: new Date('2026-01-02T14:30'),
+    walkDate: new Date('2026-01-02'),
     city: 'Ottawa',
   },
   {
     id: 2,
-    startTime: new Date('2026-01-03T15:00'),
-    endTime: new Date('2026-01-03T15:45'),
+    walkDate: new Date('2026-01-03'),
     city: 'Ottawa',
   },
 ];
